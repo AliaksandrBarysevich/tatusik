@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #ededed;
+}
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header,
+.main, 
+.footer {
+    width: 90%;
+    max-width: 1152px;
+    margin: 0 auto;
+}
+.header {
+    width: 100%;
+}
+.promo_header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly;
+    height: 100%;
+}
+.promo_header,
+.footer {
+    padding: 30px;
+}
+.logo a {
+    text-decoration: none;
+    color: rgb(87, 72, 228);
+    font-size: 40px;
+    font-weight: bold;
+}
+.tel,
+.contacts {
+    font-size: 14px;
+    font-weight: bold;
+}
+.contacts {
+    margin: 0 5%;
+}
+.shop a {
+    text-decoration: none;
+    color: #000;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 50px;
+}
+.shop a img {
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+}
+.nav {
+    background-color: rgb(87, 28, 223);
+    width: 100%;
+}
+.nav ul {
+    list-style: none; 
+    display: flex;
+    justify-content: center;
+}
+#nav_toggle {
+    display: none;
+}
+.nav_toggle {
+    position: relative;
+    border: 0;
+    display: none;
+    background: none;
+}
+.nav_toggle::before {
+    content: 'MENU';
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+.nav_toggle label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.nav a {
+    display: inline-block;
+    padding: 20px 40px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav a:hover,
+.main_item p:hover {
+    color: yellow;
+}
+.main_promo {
+    display: flex;
+    justify-content: center;
+}
+.main h1 {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 15%;
+}
+.main img {
+    width: 90%;
+}
+.main_catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+.main_item { 
+    margin: 30px;
+}
+.main_item img {
+    width: 320px;
+    height: 320px;
+}
+.main_item a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    background-color: rgb(87, 72, 228);
+    text-align: center;
+    padding: 20px;
+    margin: -5px 0 0 0;
+}
+.dostavka ul,
+.contact ul {
+    padding-left: 9%;
+}
+.contact_maps {
+    overflow: hidden;
+    padding-bottom: 35%;
+    position: relative;
+    height: 0;
+    max-width: 1152px;
+    margin: 30px auto;
+}
+.contact_maps iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.footer {
+    display: flex;
+}
+.logo,
+.footer p,
+.footer_socials,
+.footer_card {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer p {
+    text-align: center;
+    font-size: 16px;
+}
+.footer_socials a,
+.footer_card a:not(:last-child) {
+    margin-right: 15px;
+}
+.footer_socials a img {
+    width: 48px;
+    height: 48px;
+}
+.logo a:hover,
+.shop:hover,
+.nav a:hover,
+.main_item p:hover,
+.footer_socials a:hover,
+.footer_card a:hover {
+    transform: scale(1.1);
+}
+.header {
+    width: 1152px;
+}
+hr {
+    margin-top: 30px;
+    margin-left: 100px;
+    width: 1152px;
+    /* display: block; 
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;*/
+}
+
+
+
