@@ -12,10 +12,10 @@
     <section class="promo">
         <header class="header">
             <div class = "promo_header">
-                <div class = "logo"><a href="#">tatusik</a></div>
+                <div class = "logo"><a href="#"><?php bloginfo ('name'); ?></a></div>
                 <div class = "tel">МТС+375(29)864-06-43<br/>МТС+375(29)226-88-30</div>
                 <div class = "contacts">Вт-Вс: 8.00-17.00<br/>Пн: выходной</div>
-                <div class = "shop"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/shop.png" alt="#">Корзина</a></div>
+                <div class = "shop"><a href="#popmake-461"><img src="<?php echo get_template_directory_uri(); ?>/images/shop.png" alt="#">Корзина</a></div>
             </div>
         </header>
     </section>

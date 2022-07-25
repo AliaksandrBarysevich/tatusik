@@ -28,19 +28,20 @@ $rating = 'https://wordpress.org/support/plugin/wp-coder/reviews/?filter=5#new-p
 ?>
 
 <div class="wrap">
-    <h1 class="wp-heading-inline"><?php echo $this->plugin_name; ?> v. <?php echo $this->plugin_version; ?></h1>
-    <a href="?page=<?php echo $this->plugin_slug; ?>&tab=add_new"
-       class="page-title-action"><?php _e( 'Add New', 'wpcoder' ); ?></a> <a href="https://www.facebook.com/wowaffect/"
+    <h1 class="wp-heading-inline"><?php echo esc_attr($this->plugin_name); ?> v. <?php echo esc_attr($this->plugin_version); ?></h1>
+    <a href="?page=<?php echo esc_attr($this->plugin_slug); ?>&tab=add_new"
+       class="page-title-action"><?php esc_html_e( 'Add New', 'wpcoder' ); ?></a> <a href="https://www.facebook.com/wowaffect/"
                                                                              class="page-title-action wow-facebook"
                                                                              target="_blank">Stay in touch</a>
     <hr class="wp-header-end">
 	<?php if ( get_option( 'wp_coder_message' ) != 'read' ) : ?>
         <div class="notice notice-info is-dismissible wow-plugin-message">
             <p class="ideas">
-                <i class="dashicons dashicons-megaphone"></i>We are constantly trying to improve the plugin and add more useful
+                <i class="dashicons dashicons-megaphone"></i>We are constantly trying to improve the plugin and add more
+                useful
                 features to it. Your support and your ideas for improving the plugin are very important to us. <br/>
-                <i class="dashicons dashicons-star-filled"></i>If you like the plugin, please <a href="<?php echo esc_url( $rating ); ?>"
-                                                                             target="_blank">leave a review</a> about it
+                <i class="dashicons dashicons-star-filled"></i>If you like the plugin, please <a
+                        href="<?php echo esc_url( $rating ); ?>" target="_blank">leave a review</a> about it
                 at WordPress.org.<br/>
                 <i class="dashicons dashicons-share"></i>Help other users find this plugin and take advantage of it.
                 <b>Share:</b> <span data-share="facebook">Facebook</span>, <span data-share="twitter">Twitter</span>,
@@ -58,21 +59,21 @@ $rating = 'https://wordpress.org/support/plugin/wp-coder/reviews/?filter=5#new-p
 	echo '<h2 class="nav-tab-wrapper">';
 	foreach ( $tabs as $tab => $name ) {
 		$class = ( $tab === $current_tab ) ? ' nav-tab-active' : '';
-		if ( $tab == 'add_new' ) {
+		if ( $tab === 'add_new' ) {
 			$action = ( isset( $_REQUEST["act"] ) ) ? sanitize_text_field( $_REQUEST["act"] ) : '';
-			if ( ! empty( $action ) && $action == 'update' ) {
-				echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . $this->plugin_slug . '&tab=' . esc_attr( $tab ) . '">' . __( 'Update', 'leadgeneration' ) . ' #' . absint( $_REQUEST["id"] ) . '</a>';
+			if ( ! empty( $action ) && $action === 'update' ) {
+				echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . esc_attr($this->plugin_slug) . '&tab=' . esc_attr( $tab ) . '">' . esc_html__( 'Update', 'leadgeneration' ) . ' #' . absint( $_REQUEST["id"] ) . '</a>';
 			} else {
-				echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . $this->plugin_slug . '&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
+				echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . esc_attr($this->plugin_slug) . '&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
 			}
 		} else {
-			echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . $this->plugin_slug . '&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
+			echo '<a class="nav-tab' . esc_attr( $class ) . '" href="?page=' . esc_attr($this->plugin_slug) . '&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
 		}
 
 	}
 	echo '</h2>';
 	$current_tab = array_key_exists( $current_tab, $tabs ) ? $current_tab : 'list';
-	$file = apply_filters( 'wp_coder_file', $current_tab );
+	$file        = apply_filters( 'wp_coder_file', $current_tab );
 	include_once( $file . '.php' );
 
 	?>

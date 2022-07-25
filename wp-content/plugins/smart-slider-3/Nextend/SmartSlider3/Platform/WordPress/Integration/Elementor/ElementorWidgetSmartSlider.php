@@ -22,7 +22,7 @@ class ElementorWidgetSmartSlider extends Widget_Base {
         return 'eicon-slider-3d';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section('section_smart_slider_elementor', [
             'label' => esc_html('Smart Slider'),

@@ -1,0 +1,28 @@
+2022-07-13T17:33:37+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T17:34:42+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T17:34:42+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T17:36:52+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T17:37:58+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T17:37:59+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+
+2022-07-13T19:39:51+00:00 CRITICAL Uncaught Error: Call to a member function single_add_to_cart_text() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\single-bosonozhki-dev.php:21
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-includes\template-loader.php(106): include()
+#1 C:\OpenServer\domains\tatusik\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#3 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\single-bosonozhki-dev.php on line 21
+
+2022-07-13T19:41:04+00:00 CRITICAL Uncaught Error: Call to a member function single_add_to_cart_text() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\single-bosonozhki-dev.php:20
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-includes\template-loader.php(106): include()
+#1 C:\OpenServer\domains\tatusik\wp-blog-header.php(19): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#3 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\single-bosonozhki-dev.php on line 20
+

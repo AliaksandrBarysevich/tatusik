@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1>Error 404.Page not found</h1>
-<p>This page doesn't exist.</p>
-
+<div class="error">
+    <h1>Error 404.Page not found<br>This page doesn't exist</h1>
+</div>
 <?php get_footer(); ?>

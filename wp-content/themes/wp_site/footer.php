@@ -1,5 +1,5 @@
     <section class="footer">
-        <div class = "logo"><a href="#">tatusik</a></div>
+        <div class = "logo"><a href="#"><?php bloginfo ('name'); ?></a></div>
         <p>ИП Борисевич А.В.<br/>
             223216, Минская обл, Червенский р-н,<br/> г.п. Смиловичи, ул. Горького, 77<br/>
             УНП: 691146166<br/>

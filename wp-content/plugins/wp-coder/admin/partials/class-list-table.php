@@ -41,8 +41,8 @@
 			echo '<input type="hidden" name="order" value="' . esc_attr( $_REQUEST['order'] ) . '" />';
 		?>
 		<p class="search-box">
-			<label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
-			<input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+			<label class="screen-reader-text" for="<?php echo esc_attr($input_id) ?>"><?php echo esc_html($text); ?>:</label>
+			<input type="search" id="<?php echo esc_attr($input_id) ?>" name="s" value="<?php _admin_search_query(); ?>" />
 			<?php submit_button( $text, 'button', false, false, array('ID' => 'search-submit') ); ?>
 		</p>
 		<?php
@@ -207,28 +207,32 @@
 			$offset  = $this->per_page * ( $paged - 1 );
 			$search  = $this->get_search();	
 			
-			$table = $this->data;		
-			
-			if( !$search || empty( $search ) ) {
-				$resultat = $wpdb->get_results( "SELECT * FROM " . $table . " order by id desc" );			
+			$table = $this->data;
+
+			if ( ! $search || empty( $search ) ) {
+				$resultat = $wpdb->get_results( "SELECT * FROM " . $table . " order by id desc" );
+			} elseif ( is_numeric( $search ) ) {
+				$query  = $wpdb->prepare( "SELECT * FROM $table WHERE id=%d", absint( $search ) );
+				$resultat = $wpdb->get_results( $query );
+			} else {
+				$query  = $wpdb->prepare( "SELECT * FROM $table WHERE title=%s order by id desc", sanitize_text_field( $search ) );
+				$resultat = $wpdb->get_results( $query );
 			}
-			elseif( is_numeric( $search ) ) {
-				$resultat = $wpdb->get_results( "SELECT * FROM " . $table . " where id=" . $search );				
-				} else {
-				$resultat = $wpdb->get_results( "SELECT * FROM " . $table . " where title='" . $search . "' order by id desc" );			
-			}		
-			
-			if ( $resultat ) {				
+
+
+			if ( $resultat ) {
 				foreach ( $resultat as $key => $value ) {	
 					$title = !empty( $value->title ) ? $value->title : '<em>' . __('Untitle', 'wpcoder')	. '</em>';
+					$delete_url = admin_url( '/admin.php?page=' . $this->pluginname . '&info=del&did=' . absint( $value->id ) );
+
 					$data[] = array(
 						'ID'        => $value->id,	
-						'title'     => '<a href="admin.php?page=' . $this->pluginname . '&tab=add_new&act=update&id=' . $value->id . '">' . $title . '</a>',
-						'code'      => '[' . $this->shortcode . ' id="' . $value->id . '"]',
-						'code-alt'  => '[' . $this->shortcode . ' title="' . $title . '"]',
-						'edit'      => '<a href="admin.php?page=' . $this->pluginname . '&tab=add_new&act=update&id=' . $value->id . '">edit</a>',
-						'delete'    => '<a href="admin.php?page=' . $this->pluginname . '&info=del&did=' . $value->id . '" style="color:red;">delete</a>',
-						'duplicate' => '<a href="admin.php?page=' . $this->pluginname . '&tab=add_new&act=duplicate&id=' . $value->id . '" style="color:green;">duplicate</a>',
+						'title'     => '<a href="admin.php?page=' . esc_attr($this->pluginname) . '&tab=add_new&act=update&id=' . absint($value->id) . '">' . $title . '</a>',
+						'code'      => '[' . esc_attr($this->shortcode) . ' id="' . absint($value->id) . '"]',
+						'code-alt'  => '[' . esc_attr($this->shortcode) . ' title="' . esc_attr($title) . '"]',
+						'edit'      => '<a href="admin.php?page=' . esc_attr($this->pluginname) . '&tab=add_new&act=update&id=' . absint($value->id) . '">edit</a>',
+						'delete'    => '<a href="'.esc_url( wp_nonce_url( $delete_url, 'wp_coder_nonce' ) ).'" style="color:red;">delete</a>',
+						'duplicate' => '<a href="admin.php?page=' . esc_attr($this->pluginname) . '&tab=add_new&act=duplicate&id=' . absint($value->id) . '" style="color:green;">duplicate</a>',
 					);				
 				}	
 			}
@@ -239,8 +243,8 @@
 			global $wpdb;
 			$data = $this->data;
 			$resultat = $wpdb->get_results( "SELECT * FROM " . $data . " order by id asc" );
-			$count = count( $resultat );			
-			return $count;
+
+			return count( $resultat );
 		}
 		
 		/**
@@ -251,9 +255,9 @@
 		private function sort_data( $a, $b )
 		{
 			// If no sort, default to title
-			$orderby = ( ! empty( $_GET['orderby'] ) ) ? $_GET['orderby'] : 'ID';
+			$orderby = ( ! empty( $_GET['orderby'] ) ) ? sanitize_text_field( $_GET['orderby'] ) : 'ID';
 			// If no order, default to asc
-			$order = ( ! empty( $_GET['order'] ) ) ? $_GET['order'] : 'desc';
+			$order = ( ! empty( $_GET['order'] ) ) ? sanitize_text_field( $_GET['order'] ) : 'desc';
 			// Determine sort order
 			$result = strnatcmp( $a[$orderby], $b[$orderby] );
 			// Send final sort direction to usort
@@ -269,10 +273,9 @@
 			* @return array $actions Array of the bulk actions
 		*/
 		public function get_bulk_actions() {
-			$actions = array(			
+			return array(
 				'wow-delete-items' => 'Delate',
-			);			
-			return $actions;
+			);
 		}
 		
 		/**
@@ -283,12 +286,14 @@
 			* @return void
 		*/
 		public function process_bulk_action() {
-			$ids    = isset( $_POST['ID'] ) ? $_POST['ID'] : false;
-			$action = $this->current_action();			
-			if ( ! is_array( $ids ) )
-			$ids = array( $ids );			
-			if( empty( $action ) )
-			return;			
+			$ids    = isset( $_POST['ID'] ) ? map_deep($_POST['ID'], 'absint') : false;
+			$action = $this->current_action();
+			if ( ! is_array( $ids ) ) {
+				$ids = array( $ids );
+			}
+			if ( empty( $action ) ) {
+				return;
+			}
 			global $wpdb;
 			$table = $this->data;
 			foreach ( $ids as $id ) {

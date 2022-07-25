@@ -1,0 +1,44 @@
+2022-07-12T15:43:47+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php:119
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-settings.php(566): include()
+#1 C:\OpenServer\domains\tatusik\wp-config.php(96): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\wp-load.php(50): require_once('C:\\OpenServer\\d...')
+#3 C:\OpenServer\domains\tatusik\wp-blog-header.php(13): require_once('C:\\OpenServer\\d...')
+#4 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#5 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php on line 119
+
+2022-07-12T15:43:54+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php:119
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-settings.php(566): include()
+#1 C:\OpenServer\domains\tatusik\wp-config.php(96): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\wp-load.php(50): require_once('C:\\OpenServer\\d...')
+#3 C:\OpenServer\domains\tatusik\wp-blog-header.php(13): require_once('C:\\OpenServer\\d...')
+#4 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#5 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php on line 119
+
+2022-07-12T15:43:56+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php:119
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-settings.php(566): include()
+#1 C:\OpenServer\domains\tatusik\wp-config.php(96): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\wp-load.php(50): require_once('C:\\OpenServer\\d...')
+#3 C:\OpenServer\domains\tatusik\wp-blog-header.php(13): require_once('C:\\OpenServer\\d...')
+#4 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#5 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php on line 119
+
+2022-07-12T15:44:01+00:00 CRITICAL Uncaught Error: Call to a member function add_to_cart() on null in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php:119
+Stack trace:
+#0 C:\OpenServer\domains\tatusik\wp-settings.php(566): include()
+#1 C:\OpenServer\domains\tatusik\wp-config.php(96): require_once('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\tatusik\wp-load.php(50): require_once('C:\\OpenServer\\d...')
+#3 C:\OpenServer\domains\tatusik\wp-blog-header.php(13): require_once('C:\\OpenServer\\d...')
+#4 C:\OpenServer\domains\tatusik\index.php(17): require('C:\\OpenServer\\d...')
+#5 {main}
+  thrown in C:\OpenServer\domains\tatusik\wp-content\themes\wp_site\functions.php on line 119
+
+2022-07-12T19:29:14+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-content\plugins\woocommerce\src\Internal\Admin\Onboarding\OnboardingJetpack.php on line 68
+
+2022-07-12T19:30:56+00:00 CRITICAL Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\tatusik\wp-includes\wp-db.php on line 2169
+

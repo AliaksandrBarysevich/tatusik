@@ -39,6 +39,12 @@ h2 {
     font-size: 40px;
     font-weight: bold;
 }
+.error {
+    text-align: center;
+    color: rgb(38, 17, 224);
+    padding: 50px;
+    font-size: 30px;
+}
 .tel,
 .contacts {
     font-size: 14px;
@@ -100,21 +106,18 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
-
+.product_btn a:hover,
+.product1_btn a:hover,
 .nav a:hover,
-.main_item p:hover {
+.main_item a:hover {
     color: yellow;
 }
 .main_promo {
     display: flex;
     justify-content: center;
 }
-.main h1 {
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    font-size: 40px;
-    padding-top: 15%;
+.main {
+    margin-top: 40px;
 }
 .main img {
     width: 90%;
@@ -123,7 +126,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30px;
 }
 .main_item { 
     margin: 30px;
@@ -132,7 +134,7 @@ h2 {
     width: 320px;
     height: 320px;
 }
-.main_item a {
+.main_item a { 
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -145,8 +147,22 @@ h2 {
     margin: -5px 0 0 0;
 }
 .dostavka ul,
+.akczii ul,
+.otzyvy ul,
 .contact ul {
     padding-left: 9%;
+}
+.footer {
+    display: flex;
+}
+.logo,
+.footer p,
+.footer_socials,
+.footer_card {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contact_maps {
     overflow: hidden;
@@ -163,18 +179,6 @@ h2 {
     width: 100%;
     position: absolute;
 }
-.footer {
-    display: flex;
-}
-.logo,
-.footer p,
-.footer_socials,
-.footer_card {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .footer p {
     text-align: center;
     font-size: 16px;
@@ -190,7 +194,6 @@ h2 {
 .logo a:hover,
 .shop:hover,
 .nav a:hover,
-.main_item p:hover,
 .footer_socials a:hover,
 .footer_card a:hover {
     transform: scale(1.1);
@@ -202,14 +205,107 @@ hr {
     margin-top: 30px;
     margin-left: 100px;
     width: 1152px;
-    /* display: block; 
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;*/
+    
 }
+.products_list { 
+    text-align: center;
+    margin-right: 25px;
+   
+}
+.product {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+.product_item {
+    background-color: #fff;
+    margin-top: -2%;
+    line-height: 25px;
+    padding-top: 15px;
+}
+.product_item a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+}
+.product img {
+    width: 240px;
+    height: 180px;
+}
+.product_btn {
+    background-color:rgb(87, 72, 228);
+    padding: 15px 30px;
+    border: 0;  
+    margin: 0 auto;
+    display: block;
+    width: 240px;
+}
+.product_btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.price {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+
+.art001 .logo {
+    margin: 40px;
+}
+.art001 img {
+    width: 600px;
+    height: 400px;
+    
+}
+.product1 {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+.product1_item {
+    background-color: #fff;
+    margin-top: -2%;
+    line-height: 25px;
+    padding-top: 15px;
+}
+.product1_item a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+}
+.product1 img {
+    width: 600px;
+    height: 450px;
+}
+.product1_btn {
+    background-color:rgb(87, 72, 228);
+    padding: 15px 30px;
+    border: 0;  
+    margin: 0 auto;
+    display: block;
+    width: 240px;
+    border-radius: 50px;
+}
+.product1_btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
+
 
 
 

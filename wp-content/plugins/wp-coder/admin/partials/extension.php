@@ -19,7 +19,7 @@
 
             <p>GET MORE FEATURES WITH THE PLUGIN EXTENSION.</p>
 
-            <p><a href="<?php echo $this->pro_url; ?>" target="_blank" class="wow-btn">Get Pro Version</a></p>
+            <p><a href="<?php echo esc_url($this->pro_url); ?>" target="_blank" class="wow-btn">Get Pro Version</a></p>
 
             <p>ADDITIONAL OPTIONS IN PRO VERSION:</p>
 

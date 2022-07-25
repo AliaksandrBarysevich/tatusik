@@ -5,7 +5,7 @@ Tags: custom css, custom js, add css, add js, add code
 Requires at least: 3.2
 Tested up to: 6.0
 Requires PHP: 5.3
-Stable tag: 2.5.2
+Stable tag: 2.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,15 +56,18 @@ Try our new [WordPress popup plugin](https://wordpress.org/plugins/popup-box/)
 
 
 == Changelog ==
+= 2.5.3 =
+* Fixed: security update
+
 = 2.5.2 =
-Fixed: minor bug on main page of the plugin
+* Fixed: minor bug on main page of the plugin
 
 = 2.5.1 =
-Fixed: minor bug.
+* Fixed: minor bug.
 
 = 2.5. =
-Added: alternative shortcode.
-Added: processing shortcodes inserted into the HTML code
+* Added: alternative shortcode.
+* Added: processing shortcodes inserted into the HTML code
 
 = 2.4 =
 * Fixed: Adding tag <textarea> in HTML code

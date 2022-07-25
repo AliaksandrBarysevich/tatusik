@@ -5,18 +5,12 @@ Template Name: dostavka-page
 ?>
 
 <?php get_header(); ?>
+<section class="dostavka">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-    <section class="dostavka">
-        <h2>Доставка и оплата</h2>
-        <ul>
-            <li>Доставка курьером по Минску в пределах МКАД,</br>осуществляется каждый день кроме понедельника с 16.00 до 18.00, стоимость 8 руб</li>
-            <li>Доставка белпочтой,</br>осуществляется каждый день кроме понедельника и воскресенья с 16.00 до 18.00, стоимость 5-6 руб</li>
-            <li>Доставка европочтой,</br>осуществляется каждый день кроме понедельника с 16.00 до 18.00, стоимость 3 руб</li>
-        </ul>
+        <h2><?php the_title(); ?></h2>
+        <ul><?php the_content(); ?></ul>
         <hr>
-    </section>
-<?php endwhile; endif; ?>
-
-<?php get_footer(); ?>
+    <?php endwhile; endif; ?>
+</section>
+<?php get_footer(); ?>  

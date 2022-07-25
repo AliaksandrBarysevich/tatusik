@@ -1,45 +1,27 @@
-<?php
-/*
-Template Name: home
-*/
-?>
-
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<section class="main">
+    <div class="main_catalog">
 
-    <h1 class='post_title'><?php the_title(); ?></h1>
-    <div class='post_content'><?php the_content(); ?></div>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php $content=get_the_content(); ?>
 
-    <section class="main">
-        <h2>Каталог</h2>
-        <div class="main_catalog">
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids3.jpeg" alt="#">
-                <a href="#"><p>Кроссовки</p></a>
+            <div class="main_catalog">
+                <div class="main_item">
+                    <?php if(has_post_thumbnail()): ?>
+                        <?php the_post_thumbnail(); ?>
+                    <?php else: ?>
+                        <img src="<?php bloginfo('template_url'); ?>/images/kids3.jpeg" alt="#">
+                    <?php endif; ?>
+    
+                    <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                </div>     
             </div>
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids5.jpg" alt="#">
-                <a href="#"><p>Босоножки</P></a>
-            </div>
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids8.jpg" alt="#">
-                <a href="#"><p>Сабо</p></a>
-            </div>
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids7.jpg" alt="#">
-                <a href="#"><p>Резиновые сапоги</p></a>
-            </div>
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids2.jpg" alt="#">
-                <a href="#"><p>Зимняя обувь</p></a>
-            </div>
-            <div class="main_item">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/kids6.jpg" alt="#">
-                <a href="#"><p>Ботинки деми</p></a>
-            </div>
-        </div>
-    </section>
-<?php endwhile; endif; ?>
+        <?php endwhile; endif; ?>
+  
+    </div>
+       
+</section>
+
 
 <?php get_footer(); ?>
