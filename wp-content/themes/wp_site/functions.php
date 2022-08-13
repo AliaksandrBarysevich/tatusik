@@ -18,7 +18,7 @@ add_action('after_setup_theme', 'wps_after_setup_theme');
 function wps_wp_enqueue_scripts()
 {
     wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css' , array(), '', 'all');
-    wp_enqueue_style('med', get_template_directory_uri() . '/css/style.css' , array(), '', 'all');
+    wp_enqueue_style('style-media', get_template_directory_uri() . '/css/media.css' , array('style'), '', 'all');
 }
 
 add_action('wp_enqueue_scripts', 'wps_wp_enqueue_scripts');

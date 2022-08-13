@@ -17,7 +17,6 @@
             <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/mastercard.png" alt="#"></a>
         </div>
     </section>
-</div>
 <?php 
     $args = array(
         'theme_location' => 'Footer',

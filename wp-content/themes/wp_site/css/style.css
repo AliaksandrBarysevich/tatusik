@@ -20,10 +20,7 @@ h2 {
     max-width: 1152px;
     margin: 0 auto;
 }
-.header {
-    width: 100%;
-}
-.promo_header {
+.promo_header { 
     display: flex;
     align-items: center; 
     justify-content: space-evenly;
@@ -197,9 +194,6 @@ h2 {
 .footer_socials a:hover,
 .footer_card a:hover {
     transform: scale(1.1);
-}
-.header {
-    width: 1152px;
 }
 hr {
     margin-top: 30px;
