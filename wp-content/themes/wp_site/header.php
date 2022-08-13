@@ -18,19 +18,19 @@
             <nav class="nav">
                 <button class="nav_toggle"><label for="nav_toggle"></label></button>
                 <input type="checkbox" id="nav_toggle">
-                <ul>
-                    <?php 
+
+                <?php 
                     $args = array(
                     'theme_location' => 'Header',
                     'menu' =>'Main',
-                    'container' => 'nav',
-                    'container_class' => 'nav',
+                    'container' => '',
+                    'container_class' => '',
                     'items_wrap' => '<ul>%3$s</ul>' 
                     );
  
                     wp_nav_menu($args);
-                    ?> 
-                </ul>
+                ?>
+            
             </nav>
         </header>
     </section>
